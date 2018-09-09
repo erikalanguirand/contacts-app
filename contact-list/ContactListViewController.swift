@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContactListViewController: UITableViewController {
+class ContactListViewController: UITableViewController, AddContactViewControllerDelegate {
     
     var contactList: [Contact] = []
     
@@ -54,11 +54,19 @@ class ContactListViewController: UITableViewController {
         tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
     }
     
-    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier = "ContactItem" {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ContactItem" {
             let controller = segue.destination as! AddContactViewController
             controller.delegate = self
         }
+    }
+    
+    func addContactViewControllerDidCancel(_ controller: AddContactViewController) {
+        
+    }
+    
+    func addContactViewController(_ controller: AddContactViewController, didFinishAdding item: Contact) {
+        
     }
 }
 
