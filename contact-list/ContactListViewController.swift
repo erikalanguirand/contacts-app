@@ -14,6 +14,7 @@ class ContactListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        populateContactList()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,8 +29,7 @@ class ContactListViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactItem", for: indexPath)
         
-        cell.textLabel?.text = "Some Stuff"
-        cell.accessoryType = .none
+        cell.textLabel?.text = contactList[indexPath.row].nameAndNumber
         
         return cell
         
