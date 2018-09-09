@@ -128,9 +128,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCI-25-UXo">
-                                <rect key="frame" x="145" y="435" width="85" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCI-25-UXo">
+                                <rect key="frame" x="144.5" y="431" width="85" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GZB-Aa-Jhr"/>
+                                </constraints>
                                 <state key="normal" title="Edit Contact"/>
                                 <connections>
                                     <action selector="editContact:" destination="agY-qf-h8N" eventType="touchUpInside" id="fSW-Bm-6IU"/>
@@ -143,8 +145,10 @@
                             <constraint firstItem="NZB-8R-0lZ" firstAttribute="top" secondItem="N4C-sI-wUC" secondAttribute="top" constant="24" id="2LE-y6-eCb"/>
                             <constraint firstItem="ds0-kJ-yZz" firstAttribute="top" secondItem="NZB-8R-0lZ" secondAttribute="bottom" constant="32" id="3ZA-fn-rb7"/>
                             <constraint firstItem="Hut-uj-lnk" firstAttribute="top" secondItem="Gi7-cr-x0P" secondAttribute="bottom" constant="8" id="Bwn-ZW-cmd"/>
+                            <constraint firstItem="aCI-25-UXo" firstAttribute="centerX" secondItem="Bn3-sf-yOA" secondAttribute="centerX" id="GQz-wX-I9f"/>
                             <constraint firstItem="nK9-Ne-F30" firstAttribute="centerX" secondItem="Bn3-sf-yOA" secondAttribute="centerX" id="LfG-p1-p58"/>
                             <constraint firstItem="Hut-uj-lnk" firstAttribute="centerX" secondItem="Bn3-sf-yOA" secondAttribute="centerX" id="OjJ-24-i8H"/>
+                            <constraint firstItem="aCI-25-UXo" firstAttribute="top" secondItem="6Qp-If-zvC" secondAttribute="bottom" constant="32" id="Xun-2o-D0W"/>
                             <constraint firstItem="6Qp-If-zvC" firstAttribute="centerX" secondItem="Bn3-sf-yOA" secondAttribute="centerX" id="axM-SH-mXD"/>
                             <constraint firstItem="ds0-kJ-yZz" firstAttribute="centerX" secondItem="Bn3-sf-yOA" secondAttribute="centerX" id="dBg-0q-LwB"/>
                             <constraint firstItem="fih-MP-wFX" firstAttribute="top" secondItem="ds0-kJ-yZz" secondAttribute="bottom" constant="11" id="e1q-cm-Ohj"/>
@@ -160,6 +164,7 @@
                     <navigationItem key="navigationItem" title="Contact Details" id="JYk-VL-IeJ"/>
                     <connections>
                         <outlet property="contactImageView" destination="NZB-8R-0lZ" id="Brn-Fq-lmQ"/>
+                        <outlet property="editButton" destination="aCI-25-UXo" id="Kwe-YX-Wrp"/>
                         <outlet property="nameLabel" destination="nK9-Ne-F30" id="s6F-Ey-rzy"/>
                         <outlet property="nameTextField" destination="fih-MP-wFX" id="l1e-P4-V7v"/>
                         <outlet property="phoneLabel" destination="Hut-uj-lnk" id="XIj-ay-aAv"/>

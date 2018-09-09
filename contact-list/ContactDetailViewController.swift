@@ -16,6 +16,7 @@ class ContactDetailViewController: UIViewController {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var contactImageView: UIImageView!
     
     // MARK: Properties
@@ -28,10 +29,7 @@ class ContactDetailViewController: UIViewController {
         super.viewDidLoad()
         guard let contactData = contactData else { return }
         populateData(data: contactData)
-        
-        nameTextField.isHidden = true
-        phoneTextField.isHidden = true
-        
+        toggleTextFields()
     }
  
     override func didReceiveMemoryWarning() {
@@ -39,14 +37,11 @@ class ContactDetailViewController: UIViewController {
     }
     
     @IBAction func editContact(_ sender: UIButton) {
-        navigationItem.title = "Edit Contact"
         
-        nameLabel.isHidden = true
-        phoneLabel.isHidden = true
-        nameTextField.isHidden = false
-        phoneTextField.isHidden = false
-        
-        
+        toggleNavigationTitle()
+        toggleButtonText()
+        toggleLabels()
+        toggleTextFields()
     }
     
     // MARK: Private Implementation
@@ -56,5 +51,31 @@ class ContactDetailViewController: UIViewController {
         phoneLabel.text = data.phoneNumber
         contactImageView.image = data.photo
         contactImageView.rounded(color: .darkGray)
+    }
+    
+    private func toggleLabels() {
+        nameLabel.isHidden = !nameLabel.isHidden
+        phoneLabel.isHidden = !phoneLabel.isHidden
+    }
+    
+    private func toggleTextFields() {
+        nameTextField.isHidden = !nameTextField.isHidden
+        phoneTextField.isHidden = !phoneTextField.isHidden
+    }
+    
+    private func toggleNavigationTitle() {
+        if navigationItem.title == "Edit Contact" {
+            navigationItem.title = "Contact Details"
+        } else {
+            navigationItem.title = "Edit Contact"
+        }
+    }
+    
+    private func toggleButtonText() {
+        if editButton.titleLabel?.text == "Edit Contact" {
+            editButton.setTitle("Cancel Editing", for: .normal)
+        } else {
+            editButton.setTitle("Edit Contact", for: .normal)
+        }
     }
 }
