@@ -36,7 +36,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="agY-qf-h8N" kind="show" identifier="ContactDetail" trigger="accessoryAction" id="79o-nP-mBV"/>
+                                    <segue destination="agY-qf-h8N" kind="show" identifier="ContactDetail" id="L10-mJ-jZ0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

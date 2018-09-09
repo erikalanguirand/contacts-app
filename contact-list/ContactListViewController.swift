@@ -57,6 +57,8 @@ class ContactListViewController: UITableViewController, AddContactViewController
         if segue.identifier == "AddContact" {
             let controller = segue.destination as! AddContactViewController
             controller.delegate = self
+        } else if segue.identifier == "ContactDetail" {
+            print("This is working!")
         }
     }
     
