@@ -15,10 +15,16 @@ protocol AddContactViewControllerDelegate: class {
 
 class AddContactViewController: UITableViewController {
 
+    // MARK: Outlets
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     
+    // MARK: Properties
+    
     weak var delegate: AddContactViewControllerDelegate?
+    
+    // MARK: Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +34,8 @@ class AddContactViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
+    // MARK: @IBActions
+    
     @IBAction func save() {
         let contact = Contact(contactName: nameTextField.text!, phoneNumber: phoneTextField.text!, photo: UIImage(named: "noimage")!)
         delegate?.addContactViewController(self, didFinishAdding: contact)
@@ -36,6 +44,8 @@ class AddContactViewController: UITableViewController {
     @IBAction func cancel() {
         delegate?.addContactViewControllerDidCancel(self)
     }
+    
+    // MARK: UITableViewDelegate Protocol
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         return nil

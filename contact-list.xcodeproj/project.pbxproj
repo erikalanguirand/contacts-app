@@ -16,6 +16,8 @@
 		036B84DD2144BB3F00966DC1 /* ContactDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B84DC2144BB3F00966DC1 /* ContactDatabase.swift */; };
 		036B84DF2144C03000966DC1 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B84DE2144C03000966DC1 /* AddContactViewController.swift */; };
 		036B84E12144CB6500966DC1 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B84E02144CB6500966DC1 /* ContactDetailViewController.swift */; };
+		03C5D11621458ED50054E5C8 /* SegueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C5D11521458ED50054E5C8 /* SegueIdentifier.swift */; };
+		03C5D118214592D80054E5C8 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C5D117214592D80054E5C8 /* UIImageViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		036B84DC2144BB3F00966DC1 /* ContactDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDatabase.swift; sourceTree = "<group>"; };
 		036B84DE2144C03000966DC1 /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
 		036B84E02144CB6500966DC1 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
+		03C5D11521458ED50054E5C8 /* SegueIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueIdentifier.swift; sourceTree = "<group>"; };
+		03C5D117214592D80054E5C8 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 				036B84DE2144C03000966DC1 /* AddContactViewController.swift */,
 				036B84DA2144BA3000966DC1 /* Contact.swift */,
 				036B84DC2144BB3F00966DC1 /* ContactDatabase.swift */,
+				03C5D11521458ED50054E5C8 /* SegueIdentifier.swift */,
+				03C5D117214592D80054E5C8 /* UIImageViewExtensions.swift */,
 				036B84CC2144B45F00966DC1 /* Main.storyboard */,
 				036B84CF2144B46100966DC1 /* Assets.xcassets */,
 				036B84D12144B46100966DC1 /* LaunchScreen.storyboard */,
@@ -149,7 +155,9 @@
 			files = (
 				036B84DF2144C03000966DC1 /* AddContactViewController.swift in Sources */,
 				036B84DB2144BA3000966DC1 /* Contact.swift in Sources */,
+				03C5D118214592D80054E5C8 /* UIImageViewExtensions.swift in Sources */,
 				036B84DD2144BB3F00966DC1 /* ContactDatabase.swift in Sources */,
+				03C5D11621458ED50054E5C8 /* SegueIdentifier.swift in Sources */,
 				036B84CB2144B45F00966DC1 /* ContactListViewController.swift in Sources */,
 				036B84E12144CB6500966DC1 /* ContactDetailViewController.swift in Sources */,
 				036B84C92144B45F00966DC1 /* AppDelegate.swift in Sources */,

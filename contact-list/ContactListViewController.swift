@@ -8,10 +8,14 @@
 
 import UIKit
 
-class ContactListViewController: UITableViewController, AddContactViewControllerDelegate {
+class ContactListViewController: UITableViewController {
+    
+    // MARK: Properties
     
     var contactList: [Contact] = []
     var selectedContactIndex = 0
+    
+    // MARK: Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +25,23 @@ class ContactListViewController: UITableViewController, AddContactViewController
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SegueIdentifier.addContactSegueIdentifier.rawValue {
+            guard let addContactViewController = segue.destination as? AddContactViewController else { return }
+            addContactViewController.delegate = self
+        } else if segue.identifier == SegueIdentifier.contactDetailSegueIdentifier.rawValue {
+            guard let contactDetailViewController = segue.destination as? ContactDetailViewController else { return }
+            contactDetailViewController.contactData = contactList[selectedContactIndex]
+        }
+    }
+}
 
-    func populateContactList() {
+// MARK: Private Implementation
+
+extension ContactListViewController {
+    
+    private func populateContactList() {
         let contactDatabase = ContactDatabase()
         
         for item in contactDatabase.contacts {
@@ -32,10 +51,21 @@ class ContactListViewController: UITableViewController, AddContactViewController
         }
     }
     
-    func generateImageName(name: String) -> String {
+    private func swipeToDelete(indexPath: IndexPath) {
+        contactList.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
+    }
+    
+    private func generateImageName(name: String) -> String {
         let imageName = name.replacingOccurrences(of: " ", with: "").lowercased()
         return imageName
     }
+}
+    
+// MARK: UITableViewDataSource Protocol
+
+extension ContactListViewController {
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contactList.count
     }
@@ -53,27 +83,21 @@ class ContactListViewController: UITableViewController, AddContactViewController
             swipeToDelete(indexPath: indexPath)
         }
     }
+}
     
-    func swipeToDelete(indexPath: IndexPath) {
-        contactList.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
-    }
+//MARK: UITableViewDelegate Protocol
+
+extension ContactListViewController {
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         selectedContactIndex = indexPath.row
         return indexPath
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AddContact" {
-            guard let addContactViewController = segue.destination as? AddContactViewController else { return }
-            addContactViewController.delegate = self
-        } else if segue.identifier == "ContactDetail" {
-            guard let contactDetailViewController = segue.destination as? ContactDetailViewController else { return }
-            contactDetailViewController.contactData = contactList[selectedContactIndex]
-        }
-    }
-    
+}
+
+// MARK: AddContactViewControllerDelegate Protocol
+
+extension ContactListViewController: AddContactViewControllerDelegate {
     func addContactViewControllerDidCancel(_ controller: AddContactViewController) {
         navigationController?.popViewController(animated: true)
     }
@@ -89,4 +113,3 @@ class ContactListViewController: UITableViewController, AddContactViewController
         navigationController?.popViewController(animated: true)
     }
 }
-

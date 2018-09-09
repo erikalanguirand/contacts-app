@@ -10,12 +10,17 @@ import UIKit
 
 class ContactDetailViewController: UIViewController {
     
+    // MARK: Outlets
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var contactImageView: UIImageView!
     
+    // MARK: Properties
     
     var contactData: Contact?
+    
+    // MARK: Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,19 +32,12 @@ class ContactDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    func populateData(data: Contact) {
+    // MARK: Private Implementation
+    
+    private func populateData(data: Contact) {
         nameLabel.text = data.contactName
         phoneLabel.text = data.phoneNumber
         contactImageView.image = data.photo
-        roundImageView()
+        contactImageView.rounded(color: .darkGray)
     }
-    
-    func roundImageView() {
-        let radius = contactImageView.frame.width/2.0
-        contactImageView.layer.cornerRadius = radius
-        contactImageView.layer.borderWidth = 1
-        contactImageView.layer.borderColor = UIColor.darkGray.cgColor
-        contactImageView.layer.masksToBounds = true
-    }
-
 }
