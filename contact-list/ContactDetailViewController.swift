@@ -35,6 +35,7 @@ class ContactDetailViewController: UIViewController {
     }
     
     @IBAction func editContact(_ sender: UIButton) {
+        self.navigationItem.title = "Edit Contact"
     }
     
     
