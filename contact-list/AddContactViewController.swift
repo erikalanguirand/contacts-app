@@ -29,7 +29,7 @@ class AddContactViewController: UITableViewController {
     }
     
     @IBAction func save() {
-        let contact = Contact(contactName: nameTextField.text!, phoneNumber: phoneTextField.text!, photo: UIImage(named: "captainamerica")!)
+        let contact = Contact(contactName: nameTextField.text!, phoneNumber: phoneTextField.text!, photo: UIImage(named: "noimage")!)
         delegate?.addContactViewController(self, didFinishAdding: contact)
     }
     

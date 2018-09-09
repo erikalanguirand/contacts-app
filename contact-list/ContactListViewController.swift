@@ -26,11 +26,16 @@ class ContactListViewController: UITableViewController, AddContactViewController
         let contactDatabase = ContactDatabase()
         
         for item in contactDatabase.contacts {
-            let newContact = Contact(contactName: item.key, phoneNumber: item.value, photo: UIImage(named: "captainamerica.png")!)
+            let imageName = generateImageName(name: item.key)
+            let newContact = Contact(contactName: item.key, phoneNumber: item.value, photo: UIImage(named: imageName)!)
             contactList.append(newContact)
         }
     }
     
+    func generateImageName(name: String) -> String {
+        let imageName = name.replacingOccurrences(of: " ", with: "").lowercased()
+        return imageName
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contactList.count
     }

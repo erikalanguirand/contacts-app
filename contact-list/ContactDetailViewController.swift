@@ -19,14 +19,27 @@ class ContactDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let data = contactData else { return }
-        nameLabel.text = data.contactName
-        phoneLabel.text = data.phoneNumber
-        contactImageView.image = data.photo
+        guard let contactData = contactData else { return }
+        populateData(data: contactData)
     }
  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func populateData(data: Contact) {
+        nameLabel.text = data.contactName
+        phoneLabel.text = data.phoneNumber
+        contactImageView.image = data.photo
+        roundImageView()
+    }
+    
+    func roundImageView() {
+        let radius = contactImageView.frame.width/2.0
+        contactImageView.layer.cornerRadius = radius
+        contactImageView.layer.borderWidth = 1
+        contactImageView.layer.borderColor = UIColor.black.cgColor
+        contactImageView.layer.masksToBounds = true
     }
 
 }
