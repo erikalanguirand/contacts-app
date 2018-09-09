@@ -21,6 +21,15 @@ class ContactListViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
 
+    func populateContactList() {
+        let contactDatabase = ContactDatabase()
+        
+        for item in contactDatabase.contacts {
+            let newContact = Contact(contactName: item.key, phoneNumber: item.value)
+            contactList.append(newContact)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contactList.count
     }
@@ -43,15 +52,6 @@ class ContactListViewController: UITableViewController {
     func swipeToDelete(indexPath: IndexPath) {
         contactList.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
-    }
-    
-    func populateContactList() {
-        let contactDatabase = ContactDatabase()
-        
-        for item in contactDatabase.contacts {
-            let newContact = Contact(contactName: item.key, phoneNumber: item.value)
-            contactList.append(newContact)
-        }
     }
 }
 
