@@ -10,7 +10,7 @@ import UIKit
 
 class ContactListViewController: UITableViewController {
 
-    
+    @IBOutlet weak var listItem: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
