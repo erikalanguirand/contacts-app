@@ -28,8 +28,7 @@ class AddContactViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func done() {
-       
+    @IBAction func save() {
         let contact = Contact(contactName: nameTextField.text!, phoneNumber: phoneTextField.text!)
         delegate?.addContactViewController(self, didFinishAdding: contact)
     }

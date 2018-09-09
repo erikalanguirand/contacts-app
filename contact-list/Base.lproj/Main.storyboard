@@ -126,7 +126,11 @@
                                 <action selector="cancel" destination="zwh-uv-2f4" id="4JI-2Z-9m7"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="bKa-vB-jnd"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="bKa-vB-jnd">
+                            <connections>
+                                <action selector="save" destination="zwh-uv-2f4" id="Rxk-RE-pFx"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="nameTextField" destination="Y7k-0m-wFj" id="7og-e5-7nU"/>

@@ -37,7 +37,6 @@ class ContactListViewController: UITableViewController, AddContactViewController
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactItem", for: indexPath)
-        
         cell.textLabel?.text = contactList[indexPath.row].nameAndNumber
         
         return cell
@@ -67,6 +66,13 @@ class ContactListViewController: UITableViewController, AddContactViewController
     
     func addContactViewController(_ controller: AddContactViewController, didFinishAdding item: Contact) {
         
+        let newRowIndex = contactList.count
+        contactList.append(item)
+        
+        let indexPath = IndexPath(row: newRowIndex, section: 0)
+        tableView.insertRows(at: [indexPath], with: .automatic)
+        
+        navigationController?.popViewController(animated: true)
     }
 }
 
