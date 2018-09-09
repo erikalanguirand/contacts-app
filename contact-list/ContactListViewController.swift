@@ -32,7 +32,17 @@ class ContactListViewController: UITableViewController {
         cell.textLabel?.text = contactList[indexPath.row].nameAndNumber
         
         return cell
-        
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            swipeToDelete(indexPath: indexPath)
+        }
+    }
+    
+    func swipeToDelete(indexPath: IndexPath) {
+        contactList.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
     }
     
     func populateContactList() {
