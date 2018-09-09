@@ -14,6 +14,8 @@ class ContactDetailViewController: UIViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var contactImageView: UIImageView!
     
     // MARK: Properties
@@ -31,6 +33,10 @@ class ContactDetailViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    @IBAction func editContact(_ sender: UIButton) {
+    }
+    
     
     // MARK: Private Implementation
     

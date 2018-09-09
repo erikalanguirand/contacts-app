@@ -108,6 +108,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fih-MP-wFX">
+                                <rect key="frame" x="46" y="280" width="282" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8Iz-f4-Rp9"/>
+                                    <constraint firstAttribute="width" constant="282" id="sNa-cf-Cga"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Qp-If-zvC">
+                                <rect key="frame" x="46" y="369" width="282" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="282" id="PMb-tR-gbC"/>
+                                    <constraint firstAttribute="width" constant="282" id="tbm-C1-2rT"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCI-25-UXo">
+                                <rect key="frame" x="145" y="435" width="85" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Edit Contact"/>
+                                <connections>
+                                    <action selector="editContact:" destination="agY-qf-h8N" eventType="touchUpInside" id="fSW-Bm-6IU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -117,11 +145,15 @@
                             <constraint firstItem="Hut-uj-lnk" firstAttribute="top" secondItem="Gi7-cr-x0P" secondAttribute="bottom" constant="8" id="Bwn-ZW-cmd"/>
                             <constraint firstItem="nK9-Ne-F30" firstAttribute="centerX" secondItem="Bn3-sf-yOA" secondAttribute="centerX" id="LfG-p1-p58"/>
                             <constraint firstItem="Hut-uj-lnk" firstAttribute="centerX" secondItem="Bn3-sf-yOA" secondAttribute="centerX" id="OjJ-24-i8H"/>
+                            <constraint firstItem="6Qp-If-zvC" firstAttribute="centerX" secondItem="Bn3-sf-yOA" secondAttribute="centerX" id="axM-SH-mXD"/>
                             <constraint firstItem="ds0-kJ-yZz" firstAttribute="centerX" secondItem="Bn3-sf-yOA" secondAttribute="centerX" id="dBg-0q-LwB"/>
+                            <constraint firstItem="fih-MP-wFX" firstAttribute="top" secondItem="ds0-kJ-yZz" secondAttribute="bottom" constant="11" id="e1q-cm-Ohj"/>
                             <constraint firstItem="Gi7-cr-x0P" firstAttribute="centerX" secondItem="Bn3-sf-yOA" secondAttribute="centerX" id="frK-kW-CRe"/>
                             <constraint firstItem="nK9-Ne-F30" firstAttribute="centerX" secondItem="Bn3-sf-yOA" secondAttribute="centerX" id="hZy-yd-I9c"/>
                             <constraint firstItem="NZB-8R-0lZ" firstAttribute="centerX" secondItem="Bn3-sf-yOA" secondAttribute="centerX" id="m3K-LX-gqw"/>
+                            <constraint firstItem="6Qp-If-zvC" firstAttribute="top" secondItem="Gi7-cr-x0P" secondAttribute="bottom" constant="11" id="nbr-hI-JQO"/>
                             <constraint firstItem="nK9-Ne-F30" firstAttribute="top" secondItem="ds0-kJ-yZz" secondAttribute="bottom" constant="8" id="vVm-w8-TQJ"/>
+                            <constraint firstItem="fih-MP-wFX" firstAttribute="centerX" secondItem="Bn3-sf-yOA" secondAttribute="centerX" id="xo8-A8-kVG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="N4C-sI-wUC"/>
                     </view>
@@ -129,7 +161,9 @@
                     <connections>
                         <outlet property="contactImageView" destination="NZB-8R-0lZ" id="Brn-Fq-lmQ"/>
                         <outlet property="nameLabel" destination="nK9-Ne-F30" id="s6F-Ey-rzy"/>
+                        <outlet property="nameTextField" destination="fih-MP-wFX" id="l1e-P4-V7v"/>
                         <outlet property="phoneLabel" destination="Hut-uj-lnk" id="XIj-ay-aAv"/>
+                        <outlet property="phoneTextField" destination="6Qp-If-zvC" id="tSM-dB-8y4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pdm-0V-JCV" userLabel="First Responder" sceneMemberID="firstResponder"/>
