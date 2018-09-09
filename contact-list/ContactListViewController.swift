@@ -26,7 +26,7 @@ class ContactListViewController: UITableViewController, AddContactViewController
         let contactDatabase = ContactDatabase()
         
         for item in contactDatabase.contacts {
-            let newContact = Contact(contactName: item.key, phoneNumber: item.value)
+            let newContact = Contact(contactName: item.key, phoneNumber: item.value, photo: UIImage(named: "captainamerica.png")!)
             contactList.append(newContact)
         }
     }
