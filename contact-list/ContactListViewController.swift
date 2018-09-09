@@ -53,5 +53,12 @@ class ContactListViewController: UITableViewController {
         contactList.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
     }
+    
+    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier = "ContactItem" {
+            let controller = segue.destination as! AddContactViewController
+            controller.delegate = self
+        }
+    }
 }
 
