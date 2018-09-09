@@ -45,7 +45,7 @@
                             <outlet property="delegate" destination="dCt-Jn-bGu" id="DOu-7R-TQW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Contacts" largeTitleDisplayMode="always" id="jdf-dh-bSL">
+                    <navigationItem key="navigationItem" title="Contacts" id="jdf-dh-bSL">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ghi-Gz-WOw">
                             <connections>
                                 <segue destination="zwh-uv-2f4" kind="show" identifier="AddContact" id="J0V-Rk-Lb6"/>
@@ -161,7 +161,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="N4C-sI-wUC"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Contact Details" id="JYk-VL-IeJ"/>
+                    <navigationItem key="navigationItem" title="Contact Details" largeTitleDisplayMode="never" id="JYk-VL-IeJ"/>
                     <connections>
                         <outlet property="contactImageView" destination="NZB-8R-0lZ" id="Brn-Fq-lmQ"/>
                         <outlet property="editButton" destination="aCI-25-UXo" id="Kwe-YX-Wrp"/>
@@ -242,7 +242,7 @@
                             <outlet property="delegate" destination="zwh-uv-2f4" id="f5I-xz-i4O"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Contact" id="quq-mG-PcL">
+                    <navigationItem key="navigationItem" title="Add Contact" largeTitleDisplayMode="never" id="quq-mG-PcL">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fEo-B1-gpq">
                             <connections>
                                 <action selector="cancel" destination="zwh-uv-2f4" id="4JI-2Z-9m7"/>
