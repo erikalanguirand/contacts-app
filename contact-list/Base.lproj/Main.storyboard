@@ -44,7 +44,7 @@
                     <navigationItem key="navigationItem" title="Contacts" largeTitleDisplayMode="always" id="jdf-dh-bSL">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ghi-Gz-WOw">
                             <connections>
-                                <segue destination="zwh-uv-2f4" kind="show" id="J0V-Rk-Lb6"/>
+                                <segue destination="zwh-uv-2f4" kind="show" identifier="AddContact" id="J0V-Rk-Lb6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -121,7 +121,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Contact" id="quq-mG-PcL">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fEo-B1-gpq"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fEo-B1-gpq">
+                            <connections>
+                                <action selector="cancel" destination="zwh-uv-2f4" id="4JI-2Z-9m7"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="bKa-vB-jnd"/>
                     </navigationItem>
                     <connections>

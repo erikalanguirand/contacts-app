@@ -55,14 +55,14 @@ class ContactListViewController: UITableViewController, AddContactViewController
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ContactItem" {
+        if segue.identifier == "AddContact" {
             let controller = segue.destination as! AddContactViewController
             controller.delegate = self
         }
     }
     
     func addContactViewControllerDidCancel(_ controller: AddContactViewController) {
-        
+        navigationController?.popViewController(animated: true)
     }
     
     func addContactViewController(_ controller: AddContactViewController, didFinishAdding item: Contact) {

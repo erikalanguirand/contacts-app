@@ -27,4 +27,8 @@ class AddContactViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    @IBAction func cancel() {
+        delegate?.addContactViewControllerDidCancel(self)
+    }
 }
