@@ -28,7 +28,17 @@ class AddContactViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func done() {
+       
+        let contact = Contact(contactName: nameTextField.text!, phoneNumber: phoneTextField.text!)
+        delegate?.addContactViewController(self, didFinishAdding: contact)
+    }
+    
     @IBAction func cancel() {
         delegate?.addContactViewControllerDidCancel(self)
+    }
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
     }
 }
