@@ -36,15 +36,19 @@ class ContactDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    // MARK: @IBActions
+    
     @IBAction func editContact(_ sender: UIButton) {
-        
         toggleNavigationTitle()
         toggleButtonText()
         toggleLabels()
         toggleTextFields()
     }
-    
-    // MARK: Private Implementation
+}
+
+// MARK: Private Implementation
+
+extension ContactDetailViewController {
     
     private func populateData(data: Contact) {
         nameLabel.text = data.contactName
@@ -64,18 +68,19 @@ class ContactDetailViewController: UIViewController {
     }
     
     private func toggleNavigationTitle() {
-        if navigationItem.title == "Edit Contact" {
-            navigationItem.title = "Contact Details"
+        if navigationItem.title == TitleText.editContact.rawValue {
+            navigationItem.title = TitleText.contactDetails.rawValue
         } else {
-            navigationItem.title = "Edit Contact"
+            navigationItem.title = TitleText.editContact.rawValue
         }
     }
     
     private func toggleButtonText() {
-        if editButton.titleLabel?.text == "Edit Contact" {
-            editButton.setTitle("Cancel Editing", for: .normal)
+        if editButton.titleLabel?.text == TitleText.editContact.rawValue {
+            editButton.setTitle(TitleText.cancelEditing.rawValue, for: .normal)
         } else {
-            editButton.setTitle("Edit Contact", for: .normal)
+            editButton.setTitle(TitleText.editContact.rawValue, for: .normal)
         }
     }
 }
+
