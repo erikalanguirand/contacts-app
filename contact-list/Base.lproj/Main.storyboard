@@ -126,6 +126,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Contact Details" id="JYk-VL-IeJ"/>
                     <connections>
+                        <outlet property="contactImageView" destination="NZB-8R-0lZ" id="Brn-Fq-lmQ"/>
                         <outlet property="nameLabel" destination="nj8-nr-x89" id="U7G-UG-iDe"/>
                         <outlet property="phoneLabel" destination="ikJ-tL-9eg" id="fak-qq-HPE"/>
                     </connections>
