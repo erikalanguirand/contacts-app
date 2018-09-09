@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol AddContactViewControllerDelegate: class {
+    func addContactViewControllerDidCancel(_ controller: AddContactViewController)
+    func addContactViewController(_ controller: AddContactViewController, didFinishAdding item: Contact)
+}
+
 class AddContactViewController: UITableViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
