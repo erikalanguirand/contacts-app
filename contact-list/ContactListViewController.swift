@@ -10,7 +10,7 @@ import UIKit
 
 class ContactListViewController: UITableViewController {
     
-    
+    var contactList: [Contact] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class ContactListViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return contactList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -33,6 +33,15 @@ class ContactListViewController: UITableViewController {
         
         return cell
         
+    }
+    
+    func populateContactList() {
+        let contactDatabase = ContactDatabase()
+        
+        for item in contactDatabase.contacts {
+            let newContact = Contact(contactName: item.key, phoneNumber: item.value)
+            contactList.append(newContact)
+        }
     }
 }
 
