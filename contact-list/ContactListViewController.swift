@@ -9,8 +9,6 @@
 import UIKit
 
 class ContactListViewController: UITableViewController {
-
-    @IBOutlet weak var listItem: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +18,16 @@ class ContactListViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
 
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListItem", for: indexPath)
+        
+        return cell
+        
+    }
 }
 
