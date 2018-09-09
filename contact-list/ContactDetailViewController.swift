@@ -28,6 +28,10 @@ class ContactDetailViewController: UIViewController {
         super.viewDidLoad()
         guard let contactData = contactData else { return }
         populateData(data: contactData)
+        
+        nameTextField.isHidden = true
+        phoneTextField.isHidden = true
+        
     }
  
     override func didReceiveMemoryWarning() {
@@ -35,9 +39,15 @@ class ContactDetailViewController: UIViewController {
     }
     
     @IBAction func editContact(_ sender: UIButton) {
-        self.navigationItem.title = "Edit Contact"
+        navigationItem.title = "Edit Contact"
+        
+        nameLabel.isHidden = true
+        phoneLabel.isHidden = true
+        nameTextField.isHidden = false
+        phoneTextField.isHidden = false
+        
+        
     }
-    
     
     // MARK: Private Implementation
     
