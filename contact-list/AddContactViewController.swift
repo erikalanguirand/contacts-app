@@ -18,6 +18,8 @@ class AddContactViewController: UITableViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     
+    weak var delegate: AddContactViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
