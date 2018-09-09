@@ -7,15 +7,18 @@
 //
 
 import Foundation
+import UIKit
 
 class Contact {
     
     var contactName: String
     var phoneNumber: String
+    var photo: UIImage
     
-    init(contactName: String, phoneNumber: String) {
+    init(contactName: String, phoneNumber: String, photo: UIImage) {
         self.contactName = contactName
         self.phoneNumber = phoneNumber
+        self.photo = photo
     }
     
     var nameAndNumber: String {

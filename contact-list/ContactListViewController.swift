@@ -11,6 +11,7 @@ import UIKit
 class ContactListViewController: UITableViewController, AddContactViewControllerDelegate {
     
     var contactList: [Contact] = []
+    var selectedContactIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,12 +54,18 @@ class ContactListViewController: UITableViewController, AddContactViewController
         tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
     }
     
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        selectedContactIndex = indexPath.row
+        return indexPath
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddContact" {
-            let controller = segue.destination as! AddContactViewController
-            controller.delegate = self
+            guard let addContactViewController = segue.destination as? AddContactViewController else { return }
+            addContactViewController.delegate = self
         } else if segue.identifier == "ContactDetail" {
-            print("This is working!")
+            guard let contactDetailViewController = segue.destination as? ContactDetailViewController else { return }
+            contactDetailViewController.contactData = contactList[selectedContactIndex]
         }
     }
     
