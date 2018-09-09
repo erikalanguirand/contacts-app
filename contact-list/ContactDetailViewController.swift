@@ -38,7 +38,7 @@ class ContactDetailViewController: UIViewController {
         let radius = contactImageView.frame.width/2.0
         contactImageView.layer.cornerRadius = radius
         contactImageView.layer.borderWidth = 1
-        contactImageView.layer.borderColor = UIColor.black.cgColor
+        contactImageView.layer.borderColor = UIColor.darkGray.cgColor
         contactImageView.layer.masksToBounds = true
     }
 
