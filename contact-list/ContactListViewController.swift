@@ -19,6 +19,7 @@ class ContactListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        useLargeTitles()
         populateContactList()
     }
 
@@ -59,6 +60,10 @@ extension ContactListViewController {
     private func generateImageName(name: String) -> String {
         let imageName = name.replacingOccurrences(of: " ", with: "").lowercased()
         return imageName
+    }
+    
+    private func useLargeTitles() {
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
     
