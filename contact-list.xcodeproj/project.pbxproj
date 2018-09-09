@@ -13,6 +13,7 @@
 		036B84D02144B46100966DC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 036B84CF2144B46100966DC1 /* Assets.xcassets */; };
 		036B84D32144B46100966DC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036B84D12144B46100966DC1 /* LaunchScreen.storyboard */; };
 		036B84DB2144BA3000966DC1 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B84DA2144BA3000966DC1 /* Contact.swift */; };
+		036B84DD2144BB3F00966DC1 /* ContactDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B84DC2144BB3F00966DC1 /* ContactDatabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		036B84D22144B46100966DC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		036B84D42144B46100966DC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		036B84DA2144BA3000966DC1 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		036B84DC2144BB3F00966DC1 /* ContactDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDatabase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				036B84C82144B45F00966DC1 /* AppDelegate.swift */,
 				036B84CA2144B45F00966DC1 /* ContactListViewController.swift */,
 				036B84DA2144BA3000966DC1 /* Contact.swift */,
+				036B84DC2144BB3F00966DC1 /* ContactDatabase.swift */,
 				036B84CC2144B45F00966DC1 /* Main.storyboard */,
 				036B84CF2144B46100966DC1 /* Assets.xcassets */,
 				036B84D12144B46100966DC1 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				036B84DB2144BA3000966DC1 /* Contact.swift in Sources */,
+				036B84DD2144BB3F00966DC1 /* ContactDatabase.swift in Sources */,
 				036B84CB2144B45F00966DC1 /* ContactListViewController.swift in Sources */,
 				036B84C92144B45F00966DC1 /* AppDelegate.swift in Sources */,
 			);
