@@ -10,6 +10,8 @@ import UIKit
 
 class ContactListViewController: UITableViewController {
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -25,6 +27,9 @@ class ContactListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListItem", for: indexPath)
+        
+        cell.textLabel?.text = "Some Stuff"
+        cell.accessoryType = .none
         
         return cell
         
