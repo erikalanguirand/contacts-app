@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Contact {
+class Contact: NSObject {
     
     var contactName: String
     var phoneNumber: String
@@ -25,3 +25,5 @@ class Contact {
         return "\(contactName) \(phoneNumber)"
     }
 }
+
+
