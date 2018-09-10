@@ -161,7 +161,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="N4C-sI-wUC"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Contact Details" largeTitleDisplayMode="never" id="JYk-VL-IeJ"/>
+                    <navigationItem key="navigationItem" title="Contact Details" largeTitleDisplayMode="never" id="JYk-VL-IeJ">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="aTZ-CU-9PR">
+                            <connections>
+                                <action selector="save:" destination="agY-qf-h8N" id="bog-cf-RqD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="contactImageView" destination="NZB-8R-0lZ" id="Brn-Fq-lmQ"/>
                         <outlet property="editButton" destination="aCI-25-UXo" id="Kwe-YX-Wrp"/>

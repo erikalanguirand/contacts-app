@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ContactDetailViewControllerDelegate: class {
+    func contactDetailViewController(_ controller: ContactDetailViewController, didFinishEditing item: Contact)
+}
+
 class ContactDetailViewController: UIViewController {
     
     // MARK: Outlets
@@ -22,6 +26,7 @@ class ContactDetailViewController: UIViewController {
     // MARK: Properties
     
     var contactData: Contact?
+    weak var delegate: ContactDetailViewControllerDelegate?
     
     // MARK: Methods
     
@@ -43,6 +48,18 @@ class ContactDetailViewController: UIViewController {
         toggleButtonText()
         toggleLabels()
         toggleTextFields()
+    }
+    
+    @IBAction func save(_ sender: Any) {
+        guard let contact = contactData else { return }
+        
+        guard let updatedName = nameTextField.text else { return }
+        contact.contactName = updatedName
+        
+        guard let updatedPhone = phoneTextField.text else { return }
+        contact.phoneNumber = updatedPhone
+        
+        delegate?.contactDetailViewController(self, didFinishEditing: contact)
     }
 }
 

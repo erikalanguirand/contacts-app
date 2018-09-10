@@ -31,10 +31,13 @@ class ContactListViewController: UITableViewController {
         if segue.identifier == SegueIdentifier.addContactSegueIdentifier.rawValue {
             guard let addContactViewController = segue.destination as? AddContactViewController else { return }
             addContactViewController.delegate = self
+            
         } else if segue.identifier == SegueIdentifier.contactDetailSegueIdentifier.rawValue {
             guard let contactDetailViewController = segue.destination as? ContactDetailViewController else { return }
             contactDetailViewController.contactData = contactList[selectedContactIndex]
+            contactDetailViewController.delegate = self
         }
+        
     }
 }
 
@@ -117,4 +120,20 @@ extension ContactListViewController: AddContactViewControllerDelegate {
         
         navigationController?.popViewController(animated: true)
     }
+}
+
+// MARK: ContactListViewControllerDelegate Protocol
+
+extension ContactListViewController: ContactDetailViewControllerDelegate {
+    
+    func contactDetailViewController(_ controller: ContactDetailViewController, didFinishEditing item: Contact) {
+        
+        guard let index = contactList.index(of: item) else { return }
+        let indexPath = IndexPath(row: index, section: 0)
+        
+        guard let cell = tableView.cellForRow(at: indexPath) else { return }
+        cell.textLabel?.text = item.nameAndNumber
+        navigationController?.popViewController(animated: true)
+    }
+    
 }
