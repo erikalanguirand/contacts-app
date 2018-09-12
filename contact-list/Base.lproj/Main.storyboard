@@ -170,7 +170,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="contactImageView" destination="NZB-8R-0lZ" id="Brn-Fq-lmQ"/>
                         <outlet property="editButton" destination="aCI-25-UXo" id="Kwe-YX-Wrp"/>
                         <outlet property="nameLabel" destination="nK9-Ne-F30" id="s6F-Ey-rzy"/>
                         <outlet property="nameTextField" destination="fih-MP-wFX" id="l1e-P4-V7v"/>

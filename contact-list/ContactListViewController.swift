@@ -27,6 +27,25 @@ class ContactListViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
+    func documentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    func dataFilePath() -> URL {
+        return documentsDirectory().appendingPathComponent("Contacts.plist")
+    }
+    
+    func saveContacts() {
+        let encoder = PropertyListEncoder()
+        do {
+            let data = try encoder.encode(contactList)
+            try data.write(to: dataFilePath(), options: Data.WritingOptions.atomic)
+            } catch {
+                print("Error encoding item array!")
+            }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == SegueIdentifier.addContactSegueIdentifier.rawValue {
             guard let addContactViewController = segue.destination as? AddContactViewController else { return }
@@ -49,8 +68,7 @@ extension ContactListViewController {
         let contactDatabase = ContactDatabase()
         
         for item in contactDatabase.contacts {
-            let imageName = generateImageName(name: item.key)
-            let newContact = Contact(contactName: item.key, phoneNumber: item.value, photo: UIImage(named: imageName)!)
+            let newContact = Contact(contactName: item.key, phoneNumber: item.value)
             contactList.append(newContact)
         }
     }
@@ -58,11 +76,6 @@ extension ContactListViewController {
     private func swipeToDelete(indexPath: IndexPath) {
         contactList.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
-    }
-    
-    private func generateImageName(name: String) -> String {
-        let imageName = name.replacingOccurrences(of: " ", with: "").lowercased()
-        return imageName
     }
     
     private func useLargeTitles() {

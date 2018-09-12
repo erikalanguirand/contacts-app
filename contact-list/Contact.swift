@@ -9,16 +9,14 @@
 import Foundation
 import UIKit
 
-class Contact: NSObject {
+class Contact: NSObject, Codable {
     
     var contactName: String
     var phoneNumber: String
-    var photo: UIImage
     
-    init(contactName: String, phoneNumber: String, photo: UIImage) {
+    init(contactName: String, phoneNumber: String) {
         self.contactName = contactName
         self.phoneNumber = phoneNumber
-        self.photo = photo
     }
     
     var nameAndNumber: String {

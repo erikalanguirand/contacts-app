@@ -21,7 +21,6 @@ class ContactDetailViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var editButton: UIButton!
-    @IBOutlet weak var contactImageView: UIImageView!
     
     // MARK: Properties
     
@@ -70,8 +69,6 @@ extension ContactDetailViewController {
     private func populateData(data: Contact) {
         nameLabel.text = data.contactName
         phoneLabel.text = data.phoneNumber
-        contactImageView.image = data.photo
-        contactImageView.rounded(color: .darkGray)
     }
     
     private func toggleLabels() {
