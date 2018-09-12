@@ -27,25 +27,6 @@ class ContactListViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
-    func documentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
-    }
-    
-    func dataFilePath() -> URL {
-        return documentsDirectory().appendingPathComponent("Contacts.plist")
-    }
-    
-    func saveContacts() {
-        let encoder = PropertyListEncoder()
-        do {
-            let data = try encoder.encode(contactList)
-            try data.write(to: dataFilePath(), options: Data.WritingOptions.atomic)
-            } catch {
-                print("Error encoding item array!")
-            }
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == SegueIdentifier.addContactSegueIdentifier.rawValue {
             guard let addContactViewController = segue.destination as? AddContactViewController else { return }
